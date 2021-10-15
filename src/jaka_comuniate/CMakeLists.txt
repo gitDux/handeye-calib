@@ -17,8 +17,26 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+#/home/ubuntu/jaka_sdk
+#├── include
+#│   ├── JAKAZuRobot.h
+#│   ├── jkerr.h
+#│   └── jktypes.h
+#├── JakaConfig.cmake
+        #####################################################################
+        ##contents in JakaConfig.cmake                                      #
+        # set(Jaka_FOUND TRUE)                                              #
+        # get_filename_component(PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)  #
+        # set(Jaka_INCLUDE_DIRS ${PREFIX}/include/)                         #
+        # set(Jaka_LIBRARIES ${PREFIX}/lib/libjakaAPI.so)                   #
+        #####################################################################
+#└── lib
+#    ├── libjakaAPI.so
+#    └── libz.a
 
-set(Jaka_DIR "/home/ubuntu/Opt/jaka_sdk")
+
+
+set(Jaka_DIR "/home/ubuntu/jaka_sdk")
 
 find_package(Jaka REQUIRED)
 
