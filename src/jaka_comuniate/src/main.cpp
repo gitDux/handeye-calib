@@ -48,14 +48,15 @@ Json::Value recvData(TcpClientPtr tcpclient,string ip)
             connect(tcpclient,ip);
         }
     }
-
-    std::string::size_type begin = recvStr.find("{\"current_user_id\"");
+    //Jaka's tcp protocol had been changed.
+    //The begining value is joint_actual_position now.
+    std::string::size_type begin = recvStr.find("{\"joint_actual_position\"");
     if (begin == recvStr.npos)
     {
         ROS_WARN("jaka client recv error data.");
     }
 
-    std::string::size_type end = recvStr.find("{\"current_user_id\"", begin + 1);
+    std::string::size_type end = recvStr.find("{\"joint_actual_position\"", begin + 1);
     if (end == recvStr.npos)
     {
         ROS_WARN("jaka client recv error data.");
