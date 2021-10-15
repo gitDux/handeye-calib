@@ -18,6 +18,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+set(Jaka_DIR "/home/ubuntu/Opt/jaka_sdk")
+
+find_package(Jaka REQUIRED)
+
+include_directories(${Jaka_INCLUDE_DIRS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -154,6 +159,7 @@ add_executable(${PROJECT_NAME}
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
+  ${Jaka_LIBRARIES} 
   jsoncpp
 )
 
